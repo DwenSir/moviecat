@@ -1,0 +1,26 @@
+<h1 class="page-header">{{titles}}</h1>
+<div class="list-group">
+    <a ng-repeat="item in subjects" href="#" class="list-group-item">
+        <span class="badge">{{item.subject.rating.average}}</span>
+        <div class="media">
+            <div class="media-left">
+                <img class="media-object" ng-src="{{item.subject.images.small}}" alt="{{item.subject.title}}">
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">{{item.subject.title}}</h4>
+                <p>导演: <span ng-repeat="d in item.subject.directors">{{d.name}} <span ng-if="!$last">、</span></span></p>
+                <p>类型: <span>{{item.subject.genres.join('、')}}</span><span style="padding-left: 25px">上映年份 : {{item.subject.year+'年'}}</span></p>
+                <p>主演: <span ng-repeat="cast in item.subject.casts">{{cast.name}}{{$last?"":"、"}}</span></p>
+            </div>
+        </div>
+    </a>
+</div>
+<div ng-show="!loading">
+    <p>总共 : {{subjects.length}}条记录</p>
+</div>
+<div class="mask" ng-show="loading">
+    <div class="spinner">
+        <div class="dot1"></div>
+        <div class="dot2"></div>
+    </div>
+</div>

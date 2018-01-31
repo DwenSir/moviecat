@@ -1,0 +1,18 @@
+<div class="jumbotron">
+  <h1>{{movie.title}}</h1>
+  <div class="detail_l">
+  	<img ng-src="{{movie.images.large}}"/>
+  </div>
+  <div class="detail_r">
+  	<strong><h2>电影介绍</h2></strong>
+  	<p>{{movie.summary}}</p>
+  </div>
+  
+</div>
+
+<div class="mask" ng-show="loading">
+    <div class="spinner">
+        <div class="dot1"></div>
+        <div class="dot2"></div>
+    </div>
+</div>
